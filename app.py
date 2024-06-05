@@ -8,7 +8,8 @@ from utils.prompts_loader import load_prompts
 from utils.name_address_extraction import extract_name_and_address_gpt
 from utils.string_comparison import compare_names, compare_addresses
 from utils.camera_check import check_camera_available
-from services.face_detection import perform_face_detection, capture_video_and_extract_frames, extract_face_encodings, compare_faces
+from services.face_detection import perform_face_detection, extract_face_encodings, compare_faces
+from services.cv_webcam_video_capture import capture_video_and_extract_frames
 from dotenv import load_dotenv
 import cv2
 import os
@@ -137,12 +138,6 @@ def main():
 
                     st.write("Extracting name and address from the ID...")
                     id_name_address = extract_name_and_address_gpt(gpt_client, id_ocr_text, id_name_address_extraction_prompt)
-                    # if 'Peach M.C' or 'Pechi M.C' or 'Pech IMC' or 'Peach MSC' or 'Phase MC' in id_name_address:
-                    #     id_name_address = id_name_address.replace('Peach M.C', 'HMC')
-                    #     id_name_address = id_name_address.replace('Pechi M.C', 'HMC')
-                    #     id_name_address = id_name_address.replace('Pech IMC', 'HMC')
-                    #     id_name_address = id_name_address.replace('Peach MSC', 'HMC')
-                    #     id_name_address = id_name_address.replace('Phase MC', 'HMC')
 
                     status.update(label="Extraction complete!", state="complete", expanded=False)
                     
