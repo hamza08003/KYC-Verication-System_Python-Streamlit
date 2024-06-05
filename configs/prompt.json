@@ -1,0 +1,7 @@
+{
+    "bill_name_address_extraction_prompt":
+    "Please extract the full name and address (if address is present) from the following Bill's OCR text. Focus on identifying the holder's name and any associated address (if any) while ignoring any irrelevant or repetitive information. Make sure your output in the this format (very necessary): Name: <Full Name> Address: <Address> and don't write anything else",
+
+    "id_name_address_extraction_prompt":
+    "Please extract the name, surname (if any) and address from the following ID's OCR text. Focus on identifying the primary holder's name and any associated address ignoring any irrelevant or repetitive information. Make sure your output in the this format (very necessary): Name: <Full Name> Address: <Address> and don't write anything else"
+}
