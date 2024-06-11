@@ -1,0 +1,4 @@
+.env
+venv/
+configs/google_cloud_service_account_creds.json
+.idea/
