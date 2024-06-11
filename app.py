@@ -170,7 +170,6 @@ def main():
     #                              Face Verification Tab                              #
     ###################################################################################
     if tabs == "Face Verification":
-        check_camera_available()
 
         st.markdown("<h3 style='text-align: center;'>👤 Face Verification</h3>", unsafe_allow_html=True)
 
