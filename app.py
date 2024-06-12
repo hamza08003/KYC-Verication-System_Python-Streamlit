@@ -194,16 +194,18 @@ def main():
                     """)
                     confirm_button = st.button("Confirm and Start Video Capture")
                     if confirm_button:
-                        modal.close()
+
+                        # modal.close()
+                        print("Hello")
                         if id_face_image:
                             with st.spinner("Processing..."):
                                 # Extract face encoding from ID image
                                 id_face_encoding = extract_face_encodings(id_face_image)
                                 if id_face_encoding is not None:
                                     st.write("Face detected in ID document. Capturing video for live verification...")
-
+                                    feed_frame = st.empty()
                                     # Capture video and extract frames
-                                    frames = capture_video_and_extract_frames(duration=5, interval=1)
+                                    frames = capture_video_and_extract_frames(feed_frame, duration=5, interval=1)
                                     match_found = False
 
                                     for i, frame in enumerate(frames):
